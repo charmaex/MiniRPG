@@ -9,17 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var playerOne: UIImageView!
+    @IBOutlet weak var playerTwo: UIImageView!
+    @IBOutlet weak var playerOneButton: UIButton!
+    @IBOutlet weak var playerTwoButton: UIButton!
+    @IBOutlet weak var playerOneHP: UILabel!
+    @IBOutlet weak var playerTwoHP: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    var model: Model!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        model = Model()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func playerOneButtonTapped(sender: AnyObject) {
+        
     }
-
+    
+    @IBAction func playerTwoButtonTapped(sender: AnyObject) {
+        
+    }
 
 }
 
