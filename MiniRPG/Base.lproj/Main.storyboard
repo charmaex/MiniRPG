@@ -128,7 +128,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xcU-T6-5I1" firstAttribute="centerX" secondItem="cIt-hF-lNY" secondAttribute="centerX" id="26a-cb-AJk"/>
                             <constraint firstItem="L6j-iY-FIY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="2WC-Ew-Oi9"/>
                             <constraint firstItem="MTr-pj-grg" firstAttribute="leading" secondItem="8DY-yk-HPM" secondAttribute="trailing" constant="8" id="3BT-db-rhC"/>
                             <constraint firstItem="L6j-iY-FIY" firstAttribute="top" secondItem="OYp-wD-uGC" secondAttribute="bottom" id="4u9-5e-eqL"/>
@@ -145,11 +144,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="uRb-R1-6zn" secondAttribute="trailing" constant="40" id="TdS-Zr-0Zz"/>
                             <constraint firstItem="uRb-R1-6zn" firstAttribute="centerX" secondItem="L6j-iY-FIY" secondAttribute="centerX" id="Vp8-zO-pE1"/>
                             <constraint firstItem="oUr-Gl-WxX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Vr3-om-YA0"/>
-                            <constraint firstItem="8DY-yk-HPM" firstAttribute="centerY" secondItem="cIt-hF-lNY" secondAttribute="centerY" id="WXX-VJ-WPM"/>
                             <constraint firstItem="uRb-R1-6zn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZBW-rr-P7Y"/>
                             <constraint firstAttribute="trailing" secondItem="oUr-Gl-WxX" secondAttribute="trailing" id="a7B-9E-7hf"/>
                             <constraint firstItem="uRb-R1-6zn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="aQ2-bo-pNz"/>
-                            <constraint firstItem="OYp-wD-uGC" firstAttribute="centerX" secondItem="mrC-OF-gMb" secondAttribute="centerX" id="aqy-nD-O2p"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oUr-Gl-WxX" secondAttribute="bottom" id="bhx-yi-PDd"/>
                             <constraint firstItem="mrC-OF-gMb" firstAttribute="centerY" secondItem="cIt-hF-lNY" secondAttribute="centerY" id="dsl-gL-nly"/>
                             <constraint firstItem="oUr-Gl-WxX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="edi-hf-jUN"/>
@@ -165,13 +162,6 @@
                             <constraint firstItem="MTr-pj-grg" firstAttribute="centerY" secondItem="8DY-yk-HPM" secondAttribute="centerY" id="zSz-Nh-ahg"/>
                             <constraint firstItem="uRb-R1-6zn" firstAttribute="centerY" secondItem="L6j-iY-FIY" secondAttribute="centerY" id="zfv-Lw-jtX"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="WXX-VJ-WPM"/>
-                                <exclude reference="26a-cb-AJk"/>
-                                <exclude reference="aqy-nD-O2p"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbk-AP-cql">
