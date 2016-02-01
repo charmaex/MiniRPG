@@ -51,6 +51,12 @@
                                     <constraint firstAttribute="height" priority="800" constant="80" id="ju8-Ho-au7"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start the fight!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ng-lE-mgM">
+                                <rect key="frame" x="70" y="515" width="460" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-hF-lNY">
                                 <rect key="frame" x="42" y="10" width="136" height="50"/>
                                 <subviews>
@@ -113,6 +119,9 @@
                             <constraint firstItem="xcU-T6-5I1" firstAttribute="centerX" secondItem="cIt-hF-lNY" secondAttribute="centerX" id="26a-cb-AJk"/>
                             <constraint firstItem="L6j-iY-FIY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="2WC-Ew-Oi9"/>
                             <constraint firstItem="L6j-iY-FIY" firstAttribute="top" secondItem="OYp-wD-uGC" secondAttribute="bottom" id="4u9-5e-eqL"/>
+                            <constraint firstItem="1ng-lE-mgM" firstAttribute="centerX" secondItem="uRb-R1-6zn" secondAttribute="centerX" id="6X2-J1-KPw"/>
+                            <constraint firstItem="1ng-lE-mgM" firstAttribute="centerY" secondItem="uRb-R1-6zn" secondAttribute="centerY" id="Aug-HS-uTK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1ng-lE-mgM" secondAttribute="trailing" constant="50" id="Jac-y1-11t"/>
                             <constraint firstItem="xcU-T6-5I1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LGq-rr-1Ft"/>
                             <constraint firstItem="OYp-wD-uGC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NGS-gE-E7h"/>
                             <constraint firstItem="L6j-iY-FIY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OXQ-fd-2z9"/>
@@ -131,6 +140,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L6j-iY-FIY" secondAttribute="bottom" id="q6N-pA-yeL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uRb-R1-6zn" secondAttribute="bottom" constant="5" id="s3C-Jn-ud5"/>
                             <constraint firstItem="mrC-OF-gMb" firstAttribute="width" secondItem="mrC-OF-gMb" secondAttribute="height" multiplier="68:25" id="sOv-3V-PkE"/>
+                            <constraint firstItem="1ng-lE-mgM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="wd5-Mf-8mo"/>
                             <constraint firstItem="OYp-wD-uGC" firstAttribute="centerY" secondItem="xcU-T6-5I1" secondAttribute="centerY" id="wtF-Hk-a9d"/>
                             <constraint firstItem="uRb-R1-6zn" firstAttribute="centerY" secondItem="L6j-iY-FIY" secondAttribute="centerY" id="zfv-Lw-jtX"/>
                         </constraints>
