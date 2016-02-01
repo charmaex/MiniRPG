@@ -88,7 +88,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-bC-3mV">
                                         <rect key="frame" x="0.0" y="0.0" width="136" height="50"/>
-                                        <state key="normal" image="player1attackbtn"/>
+                                        <state key="normal" image="player2attackbtn"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTF-Fs-Xvd">
                                         <rect key="frame" x="20" y="8" width="96" height="31"/>
@@ -182,6 +182,7 @@
         <image name="ground" width="1024" height="106"/>
         <image name="orcRight" width="241" height="348"/>
         <image name="player1attackbtn" width="212" height="78"/>
+        <image name="player2attackbtn" width="212" height="78"/>
         <image name="soldierLeft" width="406" height="441"/>
         <image name="text-holder" width="696" height="106"/>
     </resources>
