@@ -27,10 +27,19 @@ class ViewController: UIViewController {
         
         playerOne.image = model.playerOneImage
         playerTwo.image = model.playerTwoImage
+        
+        hpLabelSet()
+    }
+    
+    func hpLabelSet() {
+        playerOneHP.text = model.playerOne.hpForLabel
+        playerTwoHP.text = model.playerTwo.hpForLabel
     }
     
     func attacking(playerNumber: Player.PlayerPositions) {
         model.attack(playerNumber: playerNumber)
+        
+        hpLabelSet()
     }
 
     @IBAction func playerOneButtonTapped(sender: AnyObject) {

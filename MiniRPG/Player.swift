@@ -30,6 +30,10 @@ class Player {
     private var _parryRate: Int = 10
     private var _blockRate: Int = 10
     
+    var hpForLabel: String {
+        return "\(_hp) HP"
+    }
+    
     var blockPower: Int {
         return attackPower * _hp / _hpMax * 4/5
     }
