@@ -11,7 +11,7 @@ import Foundation
 class Orc: Player {
     
     override var critRate: Int {
-        return 13
+        return 18
     }
     override var parryRate: Int {
         return 15

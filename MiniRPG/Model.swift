@@ -31,13 +31,29 @@ struct Model {
         playerTwo = Soldier(playerNumber: .Right, name: "Player 2")
     }
     
+    func playerDied() -> Player.PlayerPositions? {
+        guard playerOne.isAlive else {
+            return .Left
+        }
+        
+        guard playerTwo.isAlive else {
+            return .Right
+        }
+        
+        return nil
+    }
+    
     func attack(playerNumber player: Player.PlayerPositions) -> String {
         let defender: Player = player == .Left ? playerTwo : playerOne
         let attacker: Player = player == .Left ? playerOne : playerTwo
     
-        let attackPower = attacker.attackPower
+        let (attackPower, critical) = attacker.attackPower
         
-        let outputMessage = defender.defendAttack(damageInput: attackPower, playerName: attacker.name)
+        var (outputMessage, damaged) = defender.defendAttack(damageInput: attackPower, playerName: attacker.name)
+        
+        if damaged && critical {
+            outputMessage = "CRITICAL: \(outputMessage)"
+        }
         
         return outputMessage
     }

@@ -28,7 +28,7 @@ class Player {
     private var _name: String
     
     var critRate: Int {
-        return 10
+        return 15
     }
     
     var parryRate: Int {
@@ -43,21 +43,30 @@ class Player {
         return _name
     }
     
+    var hp: Int {
+        return _hp > 0 ? _hp : 0
+    }
+    
     var hpForLabel: String {
-        return hpWrapper(_hp)
+        return hpWrapper(hp)
     }
     
     var blockPower: Int {
-        return attackPower * _hp / _hpMax * 4/5
+        return attackPower.0 * _hp / _hpMax * 4/5
     }
     
     var playerPosition: PlayerPositions {
         return _playerPosition
     }
     
-    var attackPower: Int {
+    var isAlive: Bool {
+        return _hp > 0
+    }
+    
+    var attackPower: (Int, Bool) {
         let adder = Int(arc4random_uniform(UInt32(_attackPower * 2/5 + 1))) - _attackPower / 5
-        return _attackPower + adder
+        let crit = Int(arc4random_uniform(UInt32(100))) < critRate ? 2 : 1
+        return ((_attackPower + adder) * crit, crit == 2)
     }
     
     var imageName: String {
@@ -83,26 +92,26 @@ class Player {
         return "\(input) HP"
     }
     
-    func defendAttack(damageInput damage: Int, playerName: String) -> String {
+    func defendAttack(damageInput damage: Int, playerName: String) -> (String, Bool) {
         let defend = Int(arc4random_uniform(UInt32(100)))
         
         guard defend > parryRate else {
-            return "The attack from \(playerName) was parried"
+            return ("The attack from \(playerName) was parried", false)
         }
         
         if defend <= parryRate + blockRate {
             let attackBlocked = damage - blockPower
             
             guard attackBlocked > 0 else {
-                return "The attack from \(playerName) was blocked"
+                return ("The attack from \(playerName) was blocked", false)
             }
             
             _hp -= attackBlocked
-            return "The attack from \(playerName) was blocked and cost \(hpWrapper(attackBlocked))"
+            return ("The attack from \(playerName) was blocked and cost \(hpWrapper(attackBlocked))", true)
         }
         
         _hp -= damage
-        return "\(playerName) attacked and cost \(hpWrapper(damage))"
+        return ("\(playerName) attacked and cost \(hpWrapper(damage))", true)
     }
     
     
