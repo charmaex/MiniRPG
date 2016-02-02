@@ -11,6 +11,10 @@ import UIKit
 
 struct Model {
     
+    enum PlayerTypes {
+        case Orc, Soldier
+    }
+    
     var playerOne: Player!
     var playerTwo: Player!
     
@@ -23,12 +27,32 @@ struct Model {
     }
     
     init() {
-        createCharacters()
+        // create another init to add other possible combinations
+        
+        createCharacters(charOne: nil, nameOne: "Player 1", charTwo: nil, nameTwo: "Player 2")
     }
     
-    mutating func createCharacters() {
-        playerOne = Orc(playerNumber: .Left, name: "Player 1")
-        playerTwo = Soldier(playerNumber: .Right, name: "Player 2")
+    private mutating func createCharacters(charOne charOne: PlayerTypes?, nameOne: String, charTwo: PlayerTypes?, nameTwo: String) {
+        
+        playerOne = createCharacter(char: charOne, name: nameOne, playerNumber: .Left)
+        playerTwo = createCharacter(char: charTwo, name: nameTwo, playerNumber: .Right)
+        
+    }
+    
+    private func createCharacter(char char: PlayerTypes?, name: String, playerNumber: Player.PlayerPositions) -> Player {
+        
+        guard let c = char else {
+            switch playerNumber {
+            case .Left: return Orc(playerNumber: playerNumber, name: name)
+            case .Right: return Soldier(playerNumber: playerNumber, name: name)
+            }
+        }
+        
+        switch c {
+        case .Orc: return Orc(playerNumber: playerNumber, name: name)
+        case .Soldier: return Soldier(playerNumber: playerNumber, name: name)
+        }
+        
     }
     
     func playerDied() -> Player.PlayerPositions? {
@@ -54,6 +78,10 @@ struct Model {
         if damaged && critical {
             outputMessage = "CRITICAL: \(outputMessage)"
         }
+        
+        // add attacking sound
+        // maybe special sound if critical
+        // maybe screaming sound as well if damaged
         
         return outputMessage
     }
