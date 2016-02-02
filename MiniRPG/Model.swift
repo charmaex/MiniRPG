@@ -11,8 +11,8 @@ import UIKit
 
 struct Model {
     
-    var playerOne: Player
-    var playerTwo: Player
+    var playerOne: Player!
+    var playerTwo: Player!
     
     var playerOneImage: UIImage? {
         return UIImage(named: playerOne.imageName)
@@ -23,12 +23,23 @@ struct Model {
     }
     
     init() {
-        playerOne = Orc(playerNumber: .Left)
-        playerTwo = Soldier(playerNumber: .Right)
+        createCharacters()
     }
     
-    func attack(playerNumber player: Player.PlayerPositions) {
+    mutating func createCharacters() {
+        playerOne = Orc(playerNumber: .Left, name: "Player 1")
+        playerTwo = Soldier(playerNumber: .Right, name: "Player 2")
+    }
+    
+    func attack(playerNumber player: Player.PlayerPositions) -> String {
+        let defender: Player = player == .Left ? playerTwo : playerOne
+        let attacker: Player = player == .Left ? playerOne : playerTwo
+    
+        let attackPower = attacker.attackPower
         
+        let outputMessage = defender.defendAttack(damageInput: attackPower, playerName: attacker.name)
+        
+        return outputMessage
     }
     
 }

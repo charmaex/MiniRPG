@@ -37,8 +37,9 @@ class ViewController: UIViewController {
     }
     
     func attacking(playerNumber: Player.PlayerPositions) {
-        model.attack(playerNumber: playerNumber)
+        let infoText = model.attack(playerNumber: playerNumber)
         
+        infoLabel.text = infoText
         hpLabelSet()
     }
 

@@ -14,7 +14,7 @@ class Soldier: Player {
         return "soldier" +  playerPosition.imageAppend
     }
     
-    convenience init(playerNumber: PlayerPositions) {
-        self.init(playerNumber: playerNumber, hpMax: 650, attackPower: 40)
+    convenience init(playerNumber: PlayerPositions, name: String) {
+        self.init(playerNumber: playerNumber, hpMax: 650, attackPower: 40, name: name)
     }
 }

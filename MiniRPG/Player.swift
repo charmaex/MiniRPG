@@ -25,13 +25,26 @@ class Player {
     private var _hpMax: Int
     private var _hp: Int
     private var _attackPower: Int
+    private var _name: String
     
-    private var _critRate: Int = 10
-    private var _parryRate: Int = 10
-    private var _blockRate: Int = 10
+    var critRate: Int {
+        return 10
+    }
+    
+    var parryRate: Int {
+        return 10
+    }
+    
+    var blockRate: Int {
+        return 10
+    }
+    
+    var name: String {
+        return _name
+    }
     
     var hpForLabel: String {
-        return "\(_hp) HP"
+        return hpWrapper(_hp)
     }
     
     var blockPower: Int {
@@ -58,11 +71,39 @@ class Player {
         return x
     }
     
-    init(playerNumber: PlayerPositions, hpMax: Int, attackPower: Int) {
+    init(playerNumber: PlayerPositions, hpMax: Int, attackPower: Int, name: String) {
         self._playerPosition = playerNumber
         self._hpMax = hpMax
         self._hp = hpMax
         self._attackPower = attackPower
+        self._name = name
     }
+    
+    private func hpWrapper(input: Int) -> String {
+        return "\(input) HP"
+    }
+    
+    func defendAttack(damageInput damage: Int, playerName: String) -> String {
+        let defend = Int(arc4random_uniform(UInt32(100)))
+        
+        guard defend > parryRate else {
+            return "The attack from \(playerName) was parried"
+        }
+        
+        if defend <= parryRate + blockRate {
+            let attackBlocked = damage - blockPower
+            
+            guard attackBlocked > 0 else {
+                return "The attack from \(playerName) was blocked"
+            }
+            
+            _hp -= attackBlocked
+            return "The attack from \(playerName) was blocked and cost \(hpWrapper(attackBlocked))"
+        }
+        
+        _hp -= damage
+        return "\(playerName) attacked and cost \(hpWrapper(damage))"
+    }
+    
     
 }

@@ -10,16 +10,22 @@ import Foundation
 
 class Orc: Player {
     
-    private var _critRate: Int = 13
-    private var _parryRate: Int = 15
-    private var _blockRate: Int = 0
+    override var critRate: Int {
+        return 13
+    }
+    override var parryRate: Int {
+        return 15
+    }
+    override var blockRate: Int {
+        return 0
+    }
     
     override var imageName: String {
         return "orc" +  playerPosition.imageAppend
     }
     
-    convenience init(playerNumber: PlayerPositions) {
-        self.init(playerNumber: playerNumber, hpMax: 400, attackPower: 60)
+    convenience init(playerNumber: PlayerPositions, name: String) {
+        self.init(playerNumber: playerNumber, hpMax: 400, attackPower: 60, name: name)
     }
     
 }
