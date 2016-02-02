@@ -10,4 +10,11 @@ import Foundation
 
 class Soldier: Player {
     
+    override var imageName: String {
+        return "soldier" +  playerPosition.imageAppend
+    }
+    
+    convenience init(playerNumber: PlayerPositions) {
+        self.init(playerNumber: playerNumber, hpMax: 650, attackPower: 40)
+    }
 }

@@ -7,15 +7,28 @@
 //
 
 import Foundation
+import UIKit
 
 struct Model {
     
     var playerOne: Player
     var playerTwo: Player
     
+    var playerOneImage: UIImage? {
+        return UIImage(named: playerOne.imageName)
+    }
+    
+    var playerTwoImage: UIImage? {
+        return UIImage(named: playerTwo.imageName)
+    }
     
     init() {
-        playerOne = Orc(playerNumber: 1, hpMax: 500, attackPower: 50)
-        playerTwo = Soldier(playerNumber: 1, hpMax: 500, attackPower: 50)
+        playerOne = Orc(playerNumber: .Left)
+        playerTwo = Soldier(playerNumber: .Right)
     }
+    
+    func attack(playerNumber player: Player.PlayerPositions) {
+        
+    }
+    
 }

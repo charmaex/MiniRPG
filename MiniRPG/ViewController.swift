@@ -24,14 +24,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         model = Model()
+        
+        playerOne.image = model.playerOneImage
+        playerTwo.image = model.playerTwoImage
+    }
+    
+    func attacking(playerNumber: Player.PlayerPositions) {
+        model.attack(playerNumber: playerNumber)
     }
 
     @IBAction func playerOneButtonTapped(sender: AnyObject) {
-        
+        attacking(.Left)
     }
     
     @IBAction func playerTwoButtonTapped(sender: AnyObject) {
-        
+        attacking(.Right)
     }
 
 }

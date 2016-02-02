@@ -12,6 +12,13 @@ class Player {
     
     enum PlayerPositions {
         case Left, Right
+        
+        var imageAppend: String {
+            switch self {
+            case .Left: return "Left"
+            case .Right: return "Right"
+            }
+        }
     }
     
     private var _playerPosition: PlayerPositions
@@ -19,11 +26,16 @@ class Player {
     private var _hp: Int
     private var _attackPower: Int
     
+    private var _critRate: Int = 10
     private var _parryRate: Int = 10
     private var _blockRate: Int = 10
     
-    private var _blockPower: Int {
+    var blockPower: Int {
         return attackPower * _hp / _hpMax * 4/5
+    }
+    
+    var playerPosition: PlayerPositions {
+        return _playerPosition
     }
     
     var attackPower: Int {
@@ -32,18 +44,21 @@ class Player {
     }
     
     var imageName: String {
-        switch _playerPosition {
-        case .Left: return "orcLeft"
-        case .Right: return "soldierRight"
+        var x: String
+        switch playerPosition {
+        case .Left: x = "orc"
+        case .Right: x = "soldier"
         }
+        
+        x += playerPosition.imageAppend
+        return x
     }
     
-    init(playerNumber: Int, hpMax: Int, attackPower: Int) {
-        self._playerPosition = playerNumber >= 2 ? .Right : .Left
+    init(playerNumber: PlayerPositions, hpMax: Int, attackPower: Int) {
+        self._playerPosition = playerNumber
         self._hpMax = hpMax
         self._hp = hpMax
         self._attackPower = attackPower
     }
-    
     
 }
