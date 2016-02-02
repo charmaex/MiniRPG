@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 import UIKit
 
 struct Model {
@@ -17,6 +18,8 @@ struct Model {
     
     var playerOne: Player!
     var playerTwo: Player!
+    
+    var attackSound: AVAudioPlayer?
     
     var playerOneImage: UIImage? {
         return UIImage(named: playerOne.imageName)
@@ -30,6 +33,20 @@ struct Model {
         // create another init to add other possible combinations
         
         createCharacters(charOne: nil, nameOne: "Player 1", charTwo: nil, nameTwo: "Player 2")
+        createSounds()
+    }
+    
+    private mutating func createSounds() {
+        guard let path = NSBundle.mainBundle().pathForResource("attack", ofType: "wav") else {
+            return
+        }
+        
+        do {
+            try attackSound = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: path))
+        } catch {
+            print("Couldn't find attack.wav")
+            return
+        }
     }
     
     private mutating func createCharacters(charOne charOne: PlayerTypes?, nameOne: String, charTwo: PlayerTypes?, nameTwo: String) {
@@ -79,7 +96,8 @@ struct Model {
             outputMessage = "CRITICAL: \(outputMessage)"
         }
         
-        // add attacking sound
+        attackSound?.play()
+        
         // maybe special sound if critical
         // maybe screaming sound as well if damaged
         
