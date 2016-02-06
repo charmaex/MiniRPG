@@ -36,11 +36,11 @@ class ViewController: UIViewController {
         playerOne.image = model.playerOneImage
         playerTwo.image = model.playerTwoImage
         
-        showObject(playerOne)
-        showObject(playerTwo)
+        playerOne.showObject()
+        playerTwo.showObject()
         
-        showObject(playerOneInfo)
-        showObject(playerTwoInfo)
+        playerOneInfo.showObject()
+        playerTwoInfo.showObject()
         
         hpLabelSet()
     }
@@ -50,31 +50,11 @@ class ViewController: UIViewController {
         playerTwoHP.text = model.playerTwo.hpForLabel
     }
     
-    func showObject(object: UIView) {
-        // add some animation here
-        
-        object.hidden = false
-    }
-    
-    func hideObject(object: UIView) {
-        // add some animation here
-        
-        object.hidden = true
-    }
-    
-    func disableButton(object: UIButton, forTime: Double) {
-        object.enabled = false
-        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(forTime * Double(NSEC_PER_SEC)))
-        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-            object.enabled = true
-        })
-    }
-    
     func attacking(playerNumber: Player.PlayerPositions) {
         let infoText = model.attack(playerNumber: playerNumber)
         
-        disableButton(playerOneButton, forTime: 1)
-        disableButton(playerTwoButton, forTime: 1)
+        playerOneButton.disableButton(forTime: 1)
+        playerTwoButton.disableButton(forTime: 1)
         
         infoLabel.text = infoText
         hpLabelSet()
@@ -85,23 +65,23 @@ class ViewController: UIViewController {
         
        NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "startGame", userInfo: nil, repeats: false)
         
-        hideObject(playerOneInfo)
-        hideObject(playerTwoInfo)
+        playerOneInfo.hideObject()
+        playerTwoInfo.hideObject()
         
         let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
         
         switch deadPlayer {
         case .Left:
-            hideObject(playerOne)
+            playerOne.hideObject()
             
             dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-                self.infoLabel.text = "\(self.model.playerTwo.name) won!"
+                self.infoLabel.text = self.model.playerTwo.winner
             })
         case .Right:
-            hideObject(playerTwo)
+            playerTwo.hideObject()
             
             dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-                self.infoLabel.text = "\(self.model.playerOne.name) won!"
+                self.infoLabel.text = self.model.playerOne.winner
             })
         }
     }

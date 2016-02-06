@@ -17,6 +17,7 @@
 		13B37B3B1C5FF11E006ABBB4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B37B3A1C5FF11E006ABBB4 /* Player.swift */; };
 		13B37B3D1C600529006ABBB4 /* Orc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B37B3C1C600529006ABBB4 /* Orc.swift */; };
 		13B37B3F1C6005C3006ABBB4 /* Soldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B37B3E1C6005C3006ABBB4 /* Soldier.swift */; };
+		13CF39AE1C660F7F0002B26D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF39AD1C660F7F0002B26D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		13B37B3A1C5FF11E006ABBB4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		13B37B3C1C600529006ABBB4 /* Orc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orc.swift; sourceTree = "<group>"; };
 		13B37B3E1C6005C3006ABBB4 /* Soldier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soldier.swift; sourceTree = "<group>"; };
+		13CF39AD1C660F7F0002B26D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				13B37B381C5FEF7E006ABBB4 /* Resources */,
 				13B37B371C5FEF75006ABBB4 /* Model */,
+				13CF39AC1C660F650002B26D /* View */,
 				13B37B231C5F3E92006ABBB4 /* AppDelegate.swift */,
 				13B37B251C5F3E92006ABBB4 /* ViewController.swift */,
 				13B37B271C5F3E92006ABBB4 /* Main.storyboard */,
@@ -93,6 +96,14 @@
 				1332E81A1C61387F00537F0C /* attack.wav */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		13CF39AC1C660F650002B26D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13CF39AD1C660F7F0002B26D /* Extensions.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +185,7 @@
 				13B37B3D1C600529006ABBB4 /* Orc.swift in Sources */,
 				13B37B3F1C6005C3006ABBB4 /* Soldier.swift in Sources */,
 				13B37B241C5F3E92006ABBB4 /* AppDelegate.swift in Sources */,
+				13CF39AE1C660F7F0002B26D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

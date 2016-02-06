@@ -43,6 +43,10 @@ class Player {
         return _name
     }
     
+    var winner: String {
+        return "\(_name) won!"
+    }
+    
     var hp: Int {
         return _hp > 0 ? _hp : 0
     }
