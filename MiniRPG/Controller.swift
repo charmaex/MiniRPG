@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Controller: UIViewController {
     
     @IBOutlet weak var playerOne: UIImageView!
     @IBOutlet weak var playerTwo: UIImageView!
-    @IBOutlet weak var playerOneButton: UIButton!
-    @IBOutlet weak var playerTwoButton: UIButton!
+    @IBOutlet weak var playerOneButton: AttackButton!
+    @IBOutlet weak var playerTwoButton: AttackButton!
     @IBOutlet weak var playerOneHP: UILabel!
     @IBOutlet weak var playerTwoHP: UILabel!
     @IBOutlet weak var playerOneInfo: UIView!
@@ -50,8 +50,8 @@ class ViewController: UIViewController {
         playerTwoHP.text = model.playerTwo.hpForLabel
     }
     
-    func attacking(playerNumber: Player.PlayerPositions) {
-        let infoText = model.attack(playerNumber: playerNumber)
+    func attacking(playerNumber: Player.PlayerPositions, damageToEnemy: Bool) {
+        let infoText = model.attack(playerNumber: playerNumber, damageToEnemy: damageToEnemy)
         
         playerOneButton.disableButton(forTime: 1)
         playerTwoButton.disableButton(forTime: 1)
@@ -86,12 +86,12 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func playerOneButtonTapped(sender: AnyObject) {
-        attacking(.Left)
+    @IBAction func playerOneButtonTapped(sender: UIButton!) {
+        attacking(.Left, damageToEnemy: sender.alpha == 1)
     }
     
-    @IBAction func playerTwoButtonTapped(sender: AnyObject) {
-        attacking(.Right)
+    @IBAction func playerTwoButtonTapped(sender: UIButton!) {
+        attacking(.Right, damageToEnemy: sender.alpha == 1)
     }
 
 }

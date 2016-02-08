@@ -84,22 +84,27 @@ struct Model {
         return nil
     }
     
-    func attack(playerNumber player: Player.PlayerPositions) -> String {
-        let defender: Player = player == .Left ? playerTwo : playerOne
+    func attack(playerNumber player: Player.PlayerPositions, damageToEnemy: Bool) -> String {
         let attacker: Player = player == .Left ? playerOne : playerTwo
-    
-        let (attackPower, critical) = attacker.attackPower
-        
-        var (outputMessage, damaged) = defender.defendAttack(damageInput: attackPower, playerName: attacker.name)
-        
-        if damaged && critical {
-            outputMessage = "CRITICAL: \(outputMessage)"
-        }
+        let defender: Player = player == .Left ? playerTwo : playerOne
         
         attackSound?.play()
         
-        // maybe special sound if critical
-        // maybe screaming sound as well if damaged
+        if damageToEnemy {
+            return attackNormal(attacker, defender: defender)
+        }
+        
+        return attacker.attackYourself()
+    }
+    
+    private func attackNormal(attacker: Player, defender: Player) -> String {
+        let (attackPower, critical) = attacker.attackPower
+        
+        let (outputMessage, damaged) = defender.defendAttack(damageInput: attackPower, playerName: attacker.name)
+        
+        if damaged && critical {
+            return "CRITICAL: \(outputMessage)"
+        }
         
         return outputMessage
     }

@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1332E81B1C61387F00537F0C /* attack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1332E81A1C61387F00537F0C /* attack.wav */; };
+		133EB6091C68E52E00135A67 /* AttackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133EB6081C68E52E00135A67 /* AttackButton.swift */; };
 		13B37B241C5F3E92006ABBB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B37B231C5F3E92006ABBB4 /* AppDelegate.swift */; };
-		13B37B261C5F3E92006ABBB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B37B251C5F3E92006ABBB4 /* ViewController.swift */; };
+		13B37B261C5F3E92006ABBB4 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B37B251C5F3E92006ABBB4 /* Controller.swift */; };
 		13B37B291C5F3E92006ABBB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B37B271C5F3E92006ABBB4 /* Main.storyboard */; };
 		13B37B2B1C5F3E92006ABBB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B37B2A1C5F3E92006ABBB4 /* Assets.xcassets */; };
 		13B37B2E1C5F3E92006ABBB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B37B2C1C5F3E92006ABBB4 /* LaunchScreen.storyboard */; };
@@ -22,9 +23,10 @@
 
 /* Begin PBXFileReference section */
 		1332E81A1C61387F00537F0C /* attack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = attack.wav; sourceTree = "<group>"; };
+		133EB6081C68E52E00135A67 /* AttackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackButton.swift; sourceTree = "<group>"; };
 		13B37B201C5F3E92006ABBB4 /* MiniRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B37B231C5F3E92006ABBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13B37B251C5F3E92006ABBB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13B37B251C5F3E92006ABBB4 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		13B37B281C5F3E92006ABBB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13B37B2A1C5F3E92006ABBB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13B37B2D1C5F3E92006ABBB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,8 +71,8 @@
 				13B37B381C5FEF7E006ABBB4 /* Resources */,
 				13B37B371C5FEF75006ABBB4 /* Model */,
 				13CF39AC1C660F650002B26D /* View */,
+				13B37B251C5F3E92006ABBB4 /* Controller.swift */,
 				13B37B231C5F3E92006ABBB4 /* AppDelegate.swift */,
-				13B37B251C5F3E92006ABBB4 /* ViewController.swift */,
 				13B37B271C5F3E92006ABBB4 /* Main.storyboard */,
 				13B37B2A1C5F3E92006ABBB4 /* Assets.xcassets */,
 				13B37B2C1C5F3E92006ABBB4 /* LaunchScreen.storyboard */,
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				13CF39AD1C660F7F0002B26D /* Extensions.swift */,
+				133EB6081C68E52E00135A67 /* AttackButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -180,8 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B37B3B1C5FF11E006ABBB4 /* Player.swift in Sources */,
+				133EB6091C68E52E00135A67 /* AttackButton.swift in Sources */,
 				13B37B361C5FEF70006ABBB4 /* Model.swift in Sources */,
-				13B37B261C5F3E92006ABBB4 /* ViewController.swift in Sources */,
+				13B37B261C5F3E92006ABBB4 /* Controller.swift in Sources */,
 				13B37B3D1C600529006ABBB4 /* Orc.swift in Sources */,
 				13B37B3F1C6005C3006ABBB4 /* Soldier.swift in Sources */,
 				13B37B241C5F3E92006ABBB4 /* AppDelegate.swift in Sources */,

@@ -8,10 +8,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MiniRPG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Controller" customModule="MiniRPG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -58,7 +58,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-hF-lNY">
                                 <rect key="frame" x="35" y="10" width="261" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYI-Fj-e67">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYI-Fj-e67" customClass="AttackButton" customModule="MiniRPG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="136" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nYI-Fj-e67" secondAttribute="height" multiplier="68:25" id="rK4-On-1td"/>
@@ -102,7 +102,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-OF-gMb">
                                 <rect key="frame" x="304" y="10" width="261" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-bC-3mV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-bC-3mV" customClass="AttackButton" customModule="MiniRPG" customModuleProvider="target">
                                         <rect key="frame" x="125" y="0.0" width="136" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3yx-bC-3mV" secondAttribute="height" multiplier="68:25" id="p7k-ea-OKb"/>

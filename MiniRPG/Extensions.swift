@@ -9,18 +9,8 @@
 import Foundation
 import UIKit
 
-extension UIButton {
-    
-    func disableButton(forTime t: Double) {
-        self.enabled = false
-        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(t * Double(NSEC_PER_SEC)))
-        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-            self.enabled = true
-        })
-    }
-}
-
 extension UIView {
+    
     func showObject() {
         // add some animation here
         

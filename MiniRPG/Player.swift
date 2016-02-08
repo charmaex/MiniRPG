@@ -68,7 +68,7 @@ class Player {
     }
     
     var attackPower: (Int, Bool) {
-        let adder = Int(arc4random_uniform(UInt32(_attackPower * 2/5 + 1))) - _attackPower / 5
+        let adder = randomizeDamageAdder(_attackPower)
         let crit = Int(arc4random_uniform(UInt32(100))) < critRate ? 2 : 1
         return ((_attackPower + adder) * crit, crit == 2)
     }
@@ -90,6 +90,10 @@ class Player {
         self._hp = hpMax
         self._attackPower = attackPower
         self._name = name
+    }
+    
+    private func randomizeDamageAdder(input: Int) -> Int {
+        return Int(arc4random_uniform(UInt32(input * 2/5 + 1))) - input / 5
     }
     
     private func hpWrapper(input: Int) -> String {
@@ -118,5 +122,14 @@ class Player {
         return ("\(playerName) attacked and cost \(hpWrapper(damage))", true)
     }
     
+    func attackYourself() -> String {
+        let healthPart = _hpMax / 100 * 10
+        let adder = randomizeDamageAdder(healthPart)
+        let damage = healthPart + adder
+        
+        _hp -= damage
+        
+        return "\(_name) attacked himself and lost \(hpWrapper(damage))"
+    }
     
 }
