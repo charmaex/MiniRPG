@@ -73,9 +73,7 @@
 				13CF39AC1C660F650002B26D /* View */,
 				13B37B251C5F3E92006ABBB4 /* Controller.swift */,
 				13B37B231C5F3E92006ABBB4 /* AppDelegate.swift */,
-				13B37B271C5F3E92006ABBB4 /* Main.storyboard */,
 				13B37B2A1C5F3E92006ABBB4 /* Assets.xcassets */,
-				13B37B2C1C5F3E92006ABBB4 /* LaunchScreen.storyboard */,
 				13B37B2F1C5F3E92006ABBB4 /* Info.plist */,
 			);
 			path = MiniRPG;
@@ -103,6 +101,8 @@
 		13CF39AC1C660F650002B26D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				13B37B271C5F3E92006ABBB4 /* Main.storyboard */,
+				13B37B2C1C5F3E92006ABBB4 /* LaunchScreen.storyboard */,
 				13CF39AD1C660F7F0002B26D /* Extensions.swift */,
 				133EB6081C68E52E00135A67 /* AttackButton.swift */,
 			);
