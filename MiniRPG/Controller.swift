@@ -75,21 +75,20 @@ class Controller: UIViewController {
         playerTwoInfo.hideObject()
         
         let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        var message: String
         
         switch deadPlayer {
         case .Left:
             playerOne.hideObject()
-            
-            dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-                self.infoLabel.text = self.model.playerTwo.winner
-            })
+            message = self.model.playerTwo.winner
         case .Right:
             playerTwo.hideObject()
-            
-            dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-                self.infoLabel.text = self.model.playerOne.winner
-            })
+            message = self.model.playerOne.winner
         }
+        
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            self.infoLabel.text = message
+        })
     }
 
 }
