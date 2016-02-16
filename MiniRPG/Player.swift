@@ -10,8 +10,8 @@ import Foundation
 
 class Player {
     
-    enum PlayerPositions {
-        case Left, Right
+    enum PlayerPositions: Int {
+        case Left = 0, Right
         
         var imageAppend: String {
             switch self {

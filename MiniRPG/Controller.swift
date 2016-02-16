@@ -50,11 +50,17 @@ class Controller: UIViewController {
         playerTwoHP.text = model.playerTwo.hpForLabel
     }
     
-    func attacking(playerNumber: Player.PlayerPositions, damageToEnemy: Bool) {
+    @IBAction func attackBtn(sender: UIButton!) {
+        guard let playerNumber = Player.PlayerPositions(rawValue: sender.tag) else {
+            return
+        }
+        let damageToEnemy = sender.alpha == 1
         let infoText = model.attack(playerNumber: playerNumber, damageToEnemy: damageToEnemy)
         
-        playerOneButton.disableButton(forTime: 1)
-        playerTwoButton.disableButton(forTime: 1)
+        let rndTime = 1 + Double(arc4random_uniform(10)) / 10 //random Time 1-2seconds
+        
+        playerOneButton.disableButton(forTime: rndTime)
+        playerTwoButton.disableButton(forTime: rndTime)
         
         infoLabel.text = infoText
         hpLabelSet()
@@ -84,14 +90,6 @@ class Controller: UIViewController {
                 self.infoLabel.text = self.model.playerOne.winner
             })
         }
-    }
-
-    @IBAction func playerOneButtonTapped(sender: UIButton!) {
-        attacking(.Left, damageToEnemy: sender.alpha == 1)
-    }
-    
-    @IBAction func playerTwoButtonTapped(sender: UIButton!) {
-        attacking(.Right, damageToEnemy: sender.alpha == 1)
     }
 
 }

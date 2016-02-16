@@ -10,24 +10,40 @@ import UIKit
 
 class AttackButton: UIButton {
     
-    private var _timer: NSTimer!
+    private var _timerEnable: NSTimer!
+    private var _timerAlpha: NSTimer!
+    private var _time: Double!
     
     func disableButton(forTime t: Double) {
+        let disableTime: Double = 0.2
+        _time = t - disableTime
+        enabled = false
+        
+        cancelTimers()
+        
+        _timerEnable = NSTimer.scheduledTimerWithTimeInterval(disableTime, target: self, selector: "reEnableButton", userInfo: nil, repeats: false)
+    }
+    
+    func reEnableButton() {
+        enabled = true
         alpha = 0.5
         
-        timer(t)
-    }
-    
-    private func timer(t: Double) {
-        if _timer != nil {
-            _timer!.invalidate()
-        }
+        cancelTimers()
         
-        _timer = NSTimer.scheduledTimerWithTimeInterval(t, target: self, selector: "reenableButton", userInfo: nil, repeats: false)
+        _timerAlpha = NSTimer.scheduledTimerWithTimeInterval(_time, target: self, selector: "reAlphaButton", userInfo: nil, repeats: false)
     }
     
-    func reenableButton() {
+    func reAlphaButton() {
         alpha = 1
     }
-
+    
+    private func cancelTimers() {
+        if _timerEnable != nil {
+            _timerEnable!.invalidate()
+        }
+        if _timerAlpha != nil {
+            _timerAlpha!.invalidate()
+        }
+    }
+    
 }

@@ -65,7 +65,7 @@
                                         </constraints>
                                         <state key="normal" image="player1attackbtn"/>
                                         <connections>
-                                            <action selector="playerOneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WBL-Df-vZG"/>
+                                            <action selector="attackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYL-fk-HcH"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USh-IU-gCw">
@@ -102,14 +102,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-OF-gMb">
                                 <rect key="frame" x="304" y="10" width="261" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-bC-3mV" customClass="AttackButton" customModule="MiniRPG" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-bC-3mV" customClass="AttackButton" customModule="MiniRPG" customModuleProvider="target">
                                         <rect key="frame" x="125" y="0.0" width="136" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3yx-bC-3mV" secondAttribute="height" multiplier="68:25" id="p7k-ea-OKb"/>
                                         </constraints>
                                         <state key="normal" image="player2attackbtn"/>
                                         <connections>
-                                            <action selector="playerTwoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nz0-rj-9g8"/>
+                                            <action selector="attackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iWP-gg-tVK"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTF-Fs-Xvd">
