@@ -21,7 +21,7 @@ class AttackButton: UIButton {
         
         cancelTimers()
         
-        _timerEnable = NSTimer.scheduledTimerWithTimeInterval(disableTime, target: self, selector: "reEnableButton", userInfo: nil, repeats: false)
+        _timerEnable = NSTimer.scheduledTimerWithTimeInterval(disableTime, target: self, selector: #selector(AttackButton.reEnableButton), userInfo: nil, repeats: false)
     }
     
     func reEnableButton() {
@@ -30,7 +30,7 @@ class AttackButton: UIButton {
         
         cancelTimers()
         
-        _timerAlpha = NSTimer.scheduledTimerWithTimeInterval(_time, target: self, selector: "reAlphaButton", userInfo: nil, repeats: false)
+        _timerAlpha = NSTimer.scheduledTimerWithTimeInterval(_time, target: self, selector: #selector(AttackButton.reAlphaButton), userInfo: nil, repeats: false)
     }
     
     func reAlphaButton() {

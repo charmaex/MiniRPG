@@ -69,7 +69,7 @@ class Controller: UIViewController {
             return
         }
         
-       NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "startGame", userInfo: nil, repeats: false)
+       NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: #selector(Controller.startGame), userInfo: nil, repeats: false)
         
         playerOneInfo.hideObject()
         playerTwoInfo.hideObject()
